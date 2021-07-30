@@ -24,9 +24,13 @@
 <!--      End Is Authenticated-->
 <!--  Permission to create   -->
         {% if request.user.is_authenticated and request.user.is_superuser %}
-      <a href="{% url 'create-product' %}"><img style="width: 20px; height: auto;" src="{% static 'img/plus.png' %}"></a>
+      <a href="{% url 'create-product' %}">
+          <img style="width: 20px; height: auto;" src="{% static 'img/plus.png' %}">
+      </a>
         {% endif %}
 <!--   End Permission   -->
+
+      <a href="{% url 'cart_detail' %}"><img style="width: 30px; height: auto;" src="{% static 'img/carts.png' %}"></a>
 
 <!--      Search    -->
     <form class="d-flex" method="get" action="{% url 'search' %}">
